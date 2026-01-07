@@ -1,5 +1,7 @@
 # Yoto Playlist Builder
 
+![Yoto Playlist Builder Screenshot](screenshot.png)
+
 A web app for building playlists from YouTube and uploading them to Yoto MYO cards.
 
 ## Features
