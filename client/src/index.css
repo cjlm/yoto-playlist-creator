@@ -26,6 +26,16 @@
   --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.05);
 
+  /* Status colors */
+  --status-success: #2d8659;
+  --status-error: #d63031;
+  --accent-yoto: #7c4dff;
+  --accent-yoto-hover: #651fff;
+
+  /* Button hover variants */
+  --accent-coral-hover: #ff6b5e;
+  --accent-mint-hover: #8fc9a3;
+
   /* Spacing */
   --space-xs: 4px;
   --space-sm: 8px;
@@ -44,6 +54,42 @@
   --font-display: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #0f0f23;
+
+  /* Slightly muted accents for dark mode */
+  --accent-coral: #ff6b6b;
+  --accent-mint: #7bed9f;
+  --accent-sky: #70a1ff;
+  --accent-lavender: #a55eea;
+  --accent-honey: #ffa502;
+  --accent-peach: #ff7f50;
+
+  /* Text colors */
+  --text-primary: #f1f2f6;
+  --text-secondary: #d1d8e0;
+  --text-muted: #a4b0be;
+
+  /* Borders and shadows */
+  --border-color: #2f3542;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  /* Status colors */
+  --status-success: #7bed9f;
+  --status-error: #ff6b6b;
+  --accent-yoto: #9c7cff;
+  --accent-yoto-hover: #7c4dff;
+
+  /* Button hover variants */
+  --accent-coral-hover: #ee5a5a;
+  --accent-mint-hover: #6adb8f;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +103,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -119,7 +166,7 @@ body::before {
 }
 
 .btn-primary:hover {
-  background: #ff6b5e;
+  background: var(--accent-coral-hover);
   transform: scale(1.02);
 }
 
@@ -152,7 +199,7 @@ body::before {
 }
 
 .btn-mint:hover {
-  background: #8fc9a3;
+  background: var(--accent-mint-hover);
 }
 
 /* Inputs */

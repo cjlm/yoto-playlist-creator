@@ -26,6 +26,21 @@ function App() {
   const [yotoUploadProgress, setYotoUploadProgress] = useState(null);
   const [previewId, setPreviewId] = useState(null);
   const [yotoStatus, setYotoStatus] = useState({ configured: false, checking: true });
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  // Apply theme to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(t => t === 'dark' ? 'light' : 'dark');
+  };
 
   // Fetch playlists and check Yoto status on mount
   useEffect(() => {
@@ -419,6 +434,13 @@ function App() {
           Yoto Playlist Builder
         </h1>
         <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
           <div className={`yoto-status ${yotoStatus.configured ? 'connected' : 'disconnected'}`} title={yotoStatus.configured ? 'Yoto connected' : 'Yoto not configured'}>
             {yotoStatus.checking ? (
               <span className="spinner" />

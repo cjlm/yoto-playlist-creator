@@ -49,7 +49,7 @@
 
 .yoto-status.connected {
   background: rgba(168, 213, 186, 0.3);
-  color: #2d8659;
+  color: var(--status-success);
 }
 
 .yoto-status.disconnected {
@@ -64,7 +64,7 @@
 }
 
 .yoto-status.connected .yoto-status-dot {
-  background: #2d8659;
+  background: var(--status-success);
   box-shadow: 0 0 6px rgba(45, 134, 89, 0.5);
 }
 
@@ -679,17 +679,17 @@
 }
 
 .btn-error:hover {
-  background: #ff6b5e;
+  background: var(--accent-coral-hover);
 }
 
 .btn-yoto {
-  background: #7c4dff;
+  background: var(--accent-yoto);
   color: white;
-  border-color: #7c4dff;
+  border-color: var(--accent-yoto);
 }
 
 .btn-yoto:hover {
-  background: #651fff;
+  background: var(--accent-yoto-hover);
 }
 
 .btn-remove {
@@ -704,7 +704,7 @@
 /* Error state for songs */
 .song-item.has-error {
   border-color: var(--accent-coral);
-  background: #fff5f5;
+  background: var(--bg-secondary);
 }
 
 .song-error {
@@ -735,7 +735,7 @@
   width: 350px;
   max-height: 400px;
   background: var(--bg-card);
-  border: 2px solid #7c4dff;
+  border: 2px solid var(--accent-yoto);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-hover);
   z-index: 1000;
@@ -751,7 +751,7 @@
   padding: var(--space-md);
   border-bottom: 1px solid var(--border-color);
   font-weight: 700;
-  color: #7c4dff;
+  color: var(--accent-yoto);
 }
 
 .yoto-progress-bar-container {
@@ -762,7 +762,7 @@
 
 .yoto-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #7c4dff, #ce93d8);
+  background: linear-gradient(90deg, var(--accent-yoto), var(--accent-lavender));
   transition: width 0.3s ease;
 }
 
@@ -791,11 +791,32 @@
 }
 
 .yoto-log-entry.success {
-  color: #2d8659;
+  color: var(--status-success);
   background: rgba(168, 213, 186, 0.2);
 }
 
 .yoto-log-entry.error {
-  color: #d63031;
+  color: var(--status-error);
   background: rgba(255, 138, 128, 0.2);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 36px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--text-muted);
+  transform: scale(1.05);
 }
